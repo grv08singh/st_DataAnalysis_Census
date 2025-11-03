@@ -17,8 +17,7 @@ secondary = st.sidebar.selectbox('Select Secondary Parameter', sorted(df.columns
 
 plot_button = st.sidebar.button('Plot Graph')
 if plot_button:
-    st.text('Bubble size represents primary parameter')
-    st.text('Bubble color represents secondary parameter')
+    st.text(f'Bubble size: {primary}.\t\tBubble color: {secondary}.')
     if selected_state == 'Entire India':
         fig = px.scatter_map(df, lat='Latitude', lon='Longitude', size=primary, color=secondary, zoom=4, size_max=35,
                                 width=1200, height=700, hover_name='District')
